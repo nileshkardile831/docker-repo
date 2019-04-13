@@ -35,7 +35,7 @@ pipeline {
 	  stage('Pull image and start a container'){
 		  steps{
 			  sh "docker pull $registry:$BUILD_NUMBER"
-			  sh "docker run -td -p 80:80 nileshkardile831/nkardile-cybage:4 /bin/bash"
+			  sh "docker run -td -p 80:80 $registry:$BUILD_NUMBER /bin/bash"
 		  }
 	  }
   }
