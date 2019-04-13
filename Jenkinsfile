@@ -1,7 +1,7 @@
 pipeline {
   environment {
     registry = "nileshkardile831/nkardile-cybage"
-    registryCredential = 'nileshkardile831'
+    registryCredential = 'docker-hub-credentials'
     dockerImage = ''
   }
   agent any
