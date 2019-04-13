@@ -32,5 +32,11 @@ pipeline {
         sh "docker rmi $registry:$BUILD_NUMBER"
       }
     }
+	  stage('Pull image and start a container'){
+		  steps{
+			  sh "docker pull $registry:$BUILD_NUMBER"
+			  sh "docker run -td -p 80:80 nileshkardile831/nkardile-cybage:4 /bin/bash"
+		  }
+	  }
   }
 }
