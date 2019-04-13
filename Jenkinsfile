@@ -1,14 +1,14 @@
 pipeline {
   environment {
-    registry = "gustavoapolinario/docker-test"
-    registryCredential = 'dockerhub'
+    registry = "nileshkardile831/nkardile-cybage"
+    registryCredential = 'nileshkardile831'
     dockerImage = ''
   }
   agent any
   stages {
     stage('Cloning Git') {
       steps {
-        git 'https://github.com/gustavoapolinario/microservices-node-example-todo-frontend.git'
+	git 'https://github.com/nileshkardile831/docker-repo.git'
       }
     }
     stage('Building image') {
