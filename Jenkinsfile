@@ -35,7 +35,7 @@ pipeline {
 	  stage('Pull image and start a container'){
 		  steps{
 			  sh "docker pull $registry:$BUILD_NUMBER"
-			  sh "docker run -td -p 80:80 $registry:$BUILD_NUMBER /bin/bash"
+			  sh "docker run --name docker-test-latest -td -p 80:80 $registry:$BUILD_NUMBER"
 		  }
 	  }
   }
